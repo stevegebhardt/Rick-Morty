@@ -1,26 +1,26 @@
 import { useState } from "react";
 
-const Buttons = (props) => {
+const Buttons = ({
+  toggleCharState,
+  toggleEpisodeState,
+  toggleLocationState,
+}) => {
   return (
     <>
       <div className="d-flex-row md-width">
-        <button
-          type="button"
-          onClick={props.toggleCharState}
-          className="margin-auto"
-        >
+        <button type="button" onClick={toggleCharState} className="margin-auto">
           Show Characters
         </button>
         <button
           type="button"
-          onClick={props.toggleLocationState}
+          onClick={toggleLocationState}
           className="margin-auto"
         >
           Show Locations
         </button>
         <button
           type="button"
-          onClick={props.toggleEpisodeState}
+          onClick={toggleEpisodeState}
           className="margin-auto"
         >
           Show Episodes
