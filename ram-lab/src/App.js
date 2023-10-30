@@ -2,10 +2,10 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Character from "./components/Characters";
+import Character from "./components/characters";
 import Location from "./components/Locations";
-import Episode from "./components/Episodes";
-import Buttons from "./components/Buttons";
+import Episode from "./components/episodes";
+import Buttons from "./components/buttons";
 import "animate.css";
 
 function App() {
