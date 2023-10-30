@@ -21,69 +21,69 @@ function App() {
 
   //Setting up different get routes as a function
   const getCharacters = () => {
-    axios.get("https://rickandmortyapi.com/api/character").then((response) => {
+    axios.get("https://rickandmortyapi.com/api/character").then(({ data }) => {
       // console.log(response.data.results);
-      setCharacters(response.data.results);
-      setNext(response.data.info.next);
-      setPrevious(response.data.info.prev);
+      setCharacters(data.results);
+      setNext(data.info.next);
+      setPrevious(data.info.prev);
     });
   };
   const getLocations = () => {
-    axios.get("https://rickandmortyapi.com/api/location").then((response) => {
-      // console.log(response.data.results);
-      setLocations(response.data.results);
-      setNext(response.data.info.next);
-      setPrevious(response.data.info.prev);
+    axios.get("https://rickandmortyapi.com/api/location").then(({ data }) => {
+      // console.log(data.results);
+      setLocations(data.results);
+      setNext(data.info.next);
+      setPrevious(data.info.prev);
     });
   };
   const getEpisodes = () => {
-    axios.get("https://rickandmortyapi.com/api/episode").then((response) => {
-      // console.log(response.data.results);
-      setEpisodes(response.data.results);
-      setNext(response.data.info.next);
-      setPrevious(response.data.info.prev);
+    axios.get("https://rickandmortyapi.com/api/episode").then(({ data }) => {
+      // console.log(data.results);
+      setEpisodes(data.results);
+      setNext(data.info.next);
+      setPrevious(data.info.prev);
     });
   };
   const nextCharPage = () => {
-    axios.get(next).then((response) => {
-      setCharacters(response.data.results);
-      setNext(response.data.info.next);
-      setPrevious(response.data.info.prev);
+    axios.get(next).then(({ data }) => {
+      setCharacters(data.results);
+      setNext(data.info.next);
+      setPrevious(data.info.prev);
     });
   };
   const prevCharPage = () => {
-    axios.get(prev).then((response) => {
-      setCharacters(response.data.results);
-      setNext(response.data.info.next);
-      setPrevious(response.data.info.prev);
+    axios.get(prev).then(({ data }) => {
+      setCharacters(data.results);
+      setNext(data.info.next);
+      setPrevious(data.info.prev);
     });
   };
   const nextLocPage = () => {
-    axios.get(next).then((response) => {
-      setLocations(response.data.results);
-      setNext(response.data.info.next);
-      setPrevious(response.data.info.prev);
+    axios.get(next).then(({ data }) => {
+      setLocations(data.results);
+      setNext(data.info.next);
+      setPrevious(data.info.prev);
     });
   };
   const prevLocPage = () => {
-    axios.get(prev).then((response) => {
-      setLocations(response.data.results);
-      setNext(response.data.info.next);
-      setPrevious(response.data.info.prev);
+    axios.get(prev).then(({ data }) => {
+      setLocations(data.results);
+      setNext(data.info.next);
+      setPrevious(data.info.prev);
     });
   };
   const nextEpiPage = () => {
-    axios.get(next).then((response) => {
-      setEpisodes(response.data.results);
-      setNext(response.data.info.next);
-      setPrevious(response.data.info.prev);
+    axios.get(next).then(({ data }) => {
+      setEpisodes(data.results);
+      setNext(data.info.next);
+      setPrevious(data.info.prev);
     });
   };
   const prevEpiPage = () => {
-    axios.get(prev).then((response) => {
-      setEpisodes(response.data.results);
-      setNext(response.data.info.next);
-      setPrevious(response.data.info.prev);
+    axios.get(prev).then(({ data }) => {
+      setEpisodes(data.results);
+      setNext(data.info.next);
+      setPrevious(data.info.prev);
     });
   };
 
