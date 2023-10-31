@@ -6,7 +6,6 @@ import axios from "axios";
 import Character from "./components/characters";
 import Location from "./components/locations";
 import Episode from "./components/episodes";
-import Buttons from "./components/buttons";
 import "animate.css";
 
 function App() {
@@ -14,9 +13,6 @@ function App() {
   const [characters, setCharacters] = useState([]);
   const [locations, setLocations] = useState([]);
   const [episodes, setEpisodes] = useState([]);
-  const [charState, setCharState] = useState(true);
-  const [locationState, setLocationState] = useState(true);
-  const [episodeState, setEpisodeState] = useState(true);
   const [next, setNext] = useState({});
   const [prev, setPrevious] = useState({});
 
@@ -98,28 +94,6 @@ function App() {
     getEpisodes();
   }, []);
 
-  //Setting up toggle states for display conditions
-  const toggleCharState = () => {
-    {
-      charState ? setCharState(false) : setCharState(true);
-    }
-    setEpisodeState(true);
-    setLocationState(true);
-  };
-  const toggleLocationState = () => {
-    {
-      locationState ? setLocationState(false) : setLocationState(true);
-    }
-    setCharState(true);
-    setEpisodeState(true);
-  };
-  const toggleEpisodeState = () => {
-    {
-      episodeState ? setEpisodeState(false) : setEpisodeState(true);
-    }
-    setCharState(true);
-    setLocationState(true);
-  };
   const reload = () => {
     window.location.reload(true);
   };
@@ -130,6 +104,7 @@ function App() {
       <div className="d-flex-column container z-index">
         <img
           src="https://media3.giphy.com/media/i2tLw5ZyikSFdkeGHT/source.gif"
+          alt="gif of R&M portal"
           className="portal"
         />
         <div className="wrapper d-flex-column container">
@@ -138,14 +113,6 @@ function App() {
               Rick and Morty
             </h1>
           </header>
-          <div className="marginTThirty">
-            <Buttons
-              toggleCharState={toggleCharState}
-              toggleLocationState={toggleLocationState}
-              toggleEpisodeState={toggleEpisodeState}
-            />
-          </div>
-          {/* ternary to check state of charState to display or hide characters */}
           <Router>
             <Route path="/characters">
               <div className="d-flex-row paddingSixty card animate__animated animate__fadeInUp">
