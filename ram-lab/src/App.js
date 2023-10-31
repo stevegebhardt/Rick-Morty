@@ -1,6 +1,7 @@
 //Set up import routes for css, states, axios, and components
 import "./App.css";
 import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import axios from "axios";
 import Character from "./components/characters";
 import Location from "./components/locations";
@@ -145,8 +146,8 @@ function App() {
             />
           </div>
           {/* ternary to check state of charState to display or hide characters */}
-          {charState ? null : (
-            <>
+          <Router>
+            <Route path="/characters">
               <div className="d-flex-row paddingSixty card animate__animated animate__fadeInUp">
                 {characters.map((character) => {
                   return (
@@ -172,12 +173,8 @@ function App() {
                   Next
                 </button>
               </div>
-            </>
-          )}
-
-          {/* ternary to check state of locationState to display or hide locations */}
-          {locationState ? null : (
-            <>
+            </Route>
+            <Route path="/locations">
               <div className="d-flex-row paddingSixty card animate__animated animate__fadeInUp">
                 {locations.map((location) => {
                   return (
@@ -203,12 +200,8 @@ function App() {
                   Next
                 </button>
               </div>
-            </>
-          )}
-
-          {/* ternary to check state of episodeState to display or hide episodes */}
-          {episodeState ? null : (
-            <>
+            </Route>
+            <Route path="/episodes">
               <div className="d-flex-row paddingSixty card animate__animated animate__fadeInUp">
                 {episodes.map((episode) => {
                   return (
@@ -234,8 +227,8 @@ function App() {
                   Next
                 </button>
               </div>
-            </>
-          )}
+            </Route>
+          </Router>
           <button type="button" className="marginBottom" onClick={reload}>
             Make It Bounce!
           </button>
